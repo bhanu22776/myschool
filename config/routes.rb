@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'home/index'
 
   get 'home/about'
 
@@ -8,7 +7,32 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users
 
-  root 'home#index'
+
+
+  authenticate :user, lambda { |u| u.role == 'student' } do
+    root 'home#student', as: :student_root
+    get 'home/student'
+  end
+
+  authenticate :user, lambda { |u| u.role == 'parent' } do
+    root 'home#parent', as: :parent_root
+    get 'home/parent'
+  end
+
+  authenticate :user, lambda { |u| u.role == 'staff' } do
+    root 'home#staff', as: :staff_root
+    get 'home/staff'
+  end
+
+  authenticate :user, lambda {|u| u.role == 'admin' } do
+    root 'home#index', as: :admin_root
+    get 'home/index'
+  end
+
+  authenticate :user do
+    root 'home#about'
+  end
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

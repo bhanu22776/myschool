@@ -8,4 +8,13 @@ class HomeController < ApplicationController
 
   def contact
   end
+
+  def student
+  end
+
+  def parent
+  end
+
+  def staff
+  end
 end
