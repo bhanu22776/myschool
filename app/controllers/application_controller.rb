@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 
 
 	def update_sanitized_params
-	  devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:name, :role, :email, :password, :password_confirmation)}
+	  devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:name, :image, :remote_image_url , :role, :email, :password, :password_confirmation)}
 	end
 
 	def configure_permitted_parameters

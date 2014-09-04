@@ -33,6 +33,11 @@ GEM
       rails (>= 4.0.0)
     builder (3.2.2)
     cancan (1.6.10)
+    carrierwave (0.10.0)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+      json (>= 1.7)
+      mime-types (>= 1.16)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -120,6 +125,7 @@ GEM
     rdoc (4.1.1)
       json (~> 1.4)
     remotipart (1.2.1)
+    rmagick (2.13.3)
     safe_yaml (1.0.3)
     sass (3.2.19)
     sass-rails (4.0.3)
@@ -162,6 +168,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap3-rails (~> 3.2.0)
   cancan
+  carrierwave
   coffee-rails (~> 4.0.0)
   devise
   jbuilder (~> 2.0)
@@ -170,6 +177,7 @@ DEPENDENCIES
   protected_attributes
   rails (= 4.1.0)
   rails_admin
+  rmagick
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring
