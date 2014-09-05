@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+require 'carrierwave'
+
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   before_filter :update_sanitized_params, if: :devise_controller?
