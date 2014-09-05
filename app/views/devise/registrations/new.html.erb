@@ -12,7 +12,7 @@
 
   <div class="col-lg-4"><%= f.label :role %></div>
   <div class="col-lg-8">
-  	<%= f.radio_button :role, 'student' %> 
+  	<%= f.radio_button :role, 'student', :checked => true %> 
 		<%= f.label :role, 'Student', :value => 'student' %>
 		<%= f.radio_button :role, 'staff' %>
 		<%= f.label :role, 'Staff', :value => 'staff' %>
