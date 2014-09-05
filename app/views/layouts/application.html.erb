@@ -44,6 +44,7 @@
           </ul> -->
 			<ul class="nav navbar-nav navbar-right">
 			  <% if user_signed_in? %>
+          <li><%= image_tag current_user.image, :class => "img-circle", :size => "50x50" if current_user.image? %></li>
           <li><%= link_to current_user.email, edit_user_registration_path %></li>
           <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
 			  <% else %>
